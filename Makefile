@@ -9,7 +9,6 @@ all:	$(TARGET)
 
 $(TARGET): $(TARGET).o h2root_funcDict.o h2root_func.o  MyTFileDict.o MyTFile.o hlimap.o hidall.o mzwork.o hcreatem.o hshm.o hmapm.o hrin2.o hcopyu.o hcopyn.o hcopyt.o zebra.o hbook.o cernlib.o kernlib.o
 	g++      $(LFLAGS) -o $@ $^ $(ROOTLIBS)
-	cp $(TARGET) ../
 h2root_funcDict.cxx: h2root_func.h h2root_funcLinkDef.h
 	rootcint -f $@ -c $^
 h2root_funcDict.o: h2root_funcDict.cxx
